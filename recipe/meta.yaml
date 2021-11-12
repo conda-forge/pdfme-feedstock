@@ -1,5 +1,5 @@
 {% set name = "pdfme" %}
-{% set version = "0.4.5" %}
+{% set version = "0.4.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdfme-{{ version }}.tar.gz
-  sha256: f694fb08a88ec1790f99e5f8648de6c0bff4db146ecf325f84a8b84bb4512e47
+  sha256: 9060c0a8f6bcec18c4ae1c6d51746b331f50fddf18c405d4378eeab54b9106c6
 
 build:
   number: 0
