@@ -1,5 +1,5 @@
 {% set name = "pdfme" %}
-{% set version = "0.4.6" %}
+{% set version = "0.4.7" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdfme-{{ version }}.tar.gz
-  sha256: 9060c0a8f6bcec18c4ae1c6d51746b331f50fddf18c405d4378eeab54b9106c6
+  sha256: 3461ab4eb7f8f048a1dd23d91184b87ff06d847154e1c2de82ceec8bd26c9c2a
 
 build:
   number: 0
@@ -19,16 +19,22 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - setuptools >=42
+    - wheel
   run:
     - python >=3.6
 
 test:
+  source_files:
+    - tests
   imports:
     - pdfme
   commands:
     - pip check
+    - pytest -vvv --capture=tee-sys -k "not content and not table" tests
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/aFelipeSP/pdfme
