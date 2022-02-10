@@ -19,16 +19,22 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - setuptools >=42
+    - wheel
   run:
     - python >=3.6
 
 test:
+  source_files:
+    - tests
   imports:
     - pdfme
   commands:
     - pip check
+    - pytest -vvv --capture=tee-sys tests
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/aFelipeSP/pdfme
