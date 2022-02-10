@@ -31,7 +31,7 @@ test:
     - pdfme
   commands:
     - pip check
-    - pytest -vvv --capture=tee-sys tests
+    - pytest -vvv --capture=tee-sys -k "not content and not table" tests
   requires:
     - pip
     - pytest
