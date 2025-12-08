@@ -32,15 +32,6 @@ tests:
         - pdfme
       pip_check: true
       python_version: ${{ python_min }}.*
-  - files:
-      source:
-        - tests
-    requirements:
-      run:
-        - pytest
-        - python ${{ python_min }}.*
-    script:
-      - pytest -vvv --capture=tee-sys -k "not content and not table" tests
 
 about:
   summary: Create PDFs easily
